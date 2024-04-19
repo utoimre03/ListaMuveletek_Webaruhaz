@@ -3,20 +3,20 @@
 ## Specifikáció:
 A felületen megjelenítünk 4 menüpontot (Termékeink, Kosár, Szeélyes adatok, Admin). Alatta hozunk létre 2 dolgot: egy rendezési fület és egy szűrési keresőt. Ezek alatt pár terméket helyezünk el (card), "Kosárba" gombbal. 
 
-### PUBLIKUS
+### Publikus
 A termékeket div-ekben jelenítjük meg (card-okat hozunk létre).
 A termékeket kosárba lehet helyezni. A bent lévő termékeket lehet módosítani, törölni.
 
-### ADMIN
+### Admin
 A táblázat előtt beillesztünk egy szerkesztőt, amivel új adatokat tudunk bevinni a táblázatba.
 A táblázat sorait külön tudjuk törölni az utolsó oszlopban lévő "X"-szel --> "X" beillesztése
 A táblázat fejlécére kattintva tudjuk rendezni a rekordokat.
 
-## ADATSZERKEZETEK
+## Adatszerkezetek
 TERMEKLISTA = [{}, {}] - itt vanak a megjelenített termékeink
 kosarLISTA = [] - ide kerülnek a kosárba tett termékek
 
-## METÓDUSOK
+## Metódusok
 1. **htmlOszeallit(lista)->txt** | összeállítja a táblázat html szerkezetét egy szöveges változóba
 2. **megjelenit(txt)** -  megjeleníti egy adott html elemben a paraméterében kapott szöveget. 
 3. **rendez(lista, irany) -> rendezettLista** | a paraméterében kapott listát név szerint megrendezi; a függvény akkor fut le, ha valamit valahol kiválasztottunk. 
