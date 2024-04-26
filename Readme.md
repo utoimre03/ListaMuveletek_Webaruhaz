@@ -26,3 +26,8 @@ Akkor fog lefutni, ha sor melletti "Töröl" gombra kattintunk.
 6. **szures(lista, keresoSzoveg) -> szurtLista** | a keresőmezőbe beírt szöveget keresi a lista objektumainak név mezőjében; mindez akkor fut le, ha beírunk valamit a keresőmezőbe.
 7. **kosarLista** | beleteszi egy listába az adott id-jű elemet
 8. **kosarbaTesz(kosarLista, termekLista, id) -> kosarlista** | az adott terméket beleteszi a kosárlistába
+
+### kosár Esemény()
+1. Minden div-ben van egy "Kosárba" gomb.
+2. Amikor rákattintunk a "Kosárba" gombra, akkor lekérjük az indexet és a TERMEKlista indexedik elemét beletesszük a kosárba.
+3. táblázatösszeállít(kosarlista) --> megjelenítjük a kosár elemet.
