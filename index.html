@@ -34,22 +34,20 @@
           </ul>
         </div>
       </nav>
-      <div class="rendszur">
-        <div class="col-lg-12">
-          <div class="dropdown">
-            <button
-              class="btn btn-danger dropdown-toggle"
-              type="button"
-              data-bs-toggle="dropdown"
-            >
-              Rendezési szempontok <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu">
-              <li><a href="#"></a>Név</li>
-              <li><a href="#"></a>Márka</li>
-            </ul>
-          </div>
-          <div class="szures">
+      <div class="container mt-3">
+        <div class="dropdown dropdown-menu-end">
+          <button
+            type="button"
+            class="btn btn-danger dropdown-toggle"
+            data-bs-toggle="dropdown"
+          >
+            Rendezési Szempontok
+          </button>
+          <ul class="dropdown-menu">
+            <li><a id="rendezes_ar" class="dropdown-item" href="#">Név</a></li>
+            <li><a id="rendezes_nev" class="dropdown-item" href="#">Ár</a></li>
+          </ul>
+          <div class="be">
             <label for="szuro"></label>
             <input
               type="text"
@@ -60,7 +58,12 @@
           </div>
         </div>
       </div>
-      <article class="row col-lg-8 gap"></article>
+      <article>
+        <div id="termekek"></div>
+      </article>
+
+      <div class="kosar"></div>
+      <footer>Ütő Imre</footer>
     </main>
   </body>
 </html>

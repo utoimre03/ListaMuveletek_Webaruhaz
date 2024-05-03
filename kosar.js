@@ -1,8 +1,6 @@
 /* kosarEsemeny() {} */
 
-KOSARLISTA = [
-
-]
+KOSARLISTA = []
 
 export function kosarOsszeallit(lista) {
     /* táblázatot állítok össze */
@@ -19,7 +17,7 @@ export function kosarOsszeallit(lista) {
         //console.log("kulcs: ", kulcs, elem[kulcs]);
         txt += `<td>${elem[kulcs]}</td>`;
       }
-      txt += `<td class='torol' id=${index}>❌</td>`;
+      txt += `<td class='torol' id=${index}>🗑️</td>`;
       txt += `</tr>`;
     });
     txt += "</tbody></table>";
