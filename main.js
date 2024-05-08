@@ -1,11 +1,12 @@
 import { termekekLISTA } from "./adat.js";
 import { termekekOsszeallit, megjelenit } from "./listaMegjelenit.js";
 import { rendezArSzerint, rendezNevSzerint } from "./adatkezelo.js";
-const termekElem = $("#termekek");
-termekElem.html(termekOsszeallit(TASKALISTA));
+
+const termekELEM = $("#termekek");
+termekELEM.html(termekekOsszeallit(termekekLISTA));
 
 const KOSAR = []
-const kosarba = $("#gomb")
+const kosarba = $(".kosar")
 
 const divELEM = $("#termekek")
 divELEM.html(megjelenit(termekekLISTA))
@@ -14,33 +15,31 @@ let irany = 1;
 init(termekekLISTA);
 
 function init(lista) {
-    megjelenit(htmlOsszeallit(lista));
     rendezEsemeny();
     torolEsemeny();
     kosarEsemeny();
-
 }
 
 function rendezEsemeny(lista) {
-  const nevElem = $("#rendezes_nev");
-  const arElem = $("#rendezes_ar");
+  const nevELEM = $("#rendezes_nev");
+  const arELEM = $("#rendezes_ar");
 
-  nevElem.on("click", function () {
-      const rLista = nevRendez(lista.slice(), irany);
-      termekElem.html(termekekOsszeallit(rLista));
+  nevELEM.on("click", function () {
+      const rLista = rendezNevSzerint(lista.slice(), irany);
+      termekELEM.html(termekekOsszeallit(rLista));
       irany *= -1;
   });
 
-  arElem.on("click", function () {
+  arELEM.on("click", function () {
       const rLista = rendezArSzerint(lista.slice(), irany);
-      termekElem.html(termekekOsszeallit(rLista));
+      termekELEM.html(termekekOsszeallit(rLista));
       irany *= -1;
   });
 }
 
 function kosarEsemeny() {
-  const gombElem = $(".gomb")
-  gombElem.on("click", function (event) {
+  const gombELEM = $(".gomb")
+  gombELEM.on("click", function (event) {
   const id = event.target.id 
   KOSAR.push(termekekLISTA[id])
   kosarba.html(termekekOsszeallit(KOSAR))

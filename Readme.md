@@ -8,9 +8,10 @@ A termékeket div-ekben jelenítjük meg (card-okat hozunk létre).
 A termékeket kosárba lehet helyezni. A bent lévő termékeket lehet módosítani, törölni.
 
 ### Admin
-A táblázat előtt beillesztünk egy szerkesztőt, amivel új adatokat tudunk bevinni a táblázatba.
-A táblázat sorait külön tudjuk törölni az utolsó oszlopban lévő "X"-szel --> "X" beillesztése
-A táblázat fejlécére kattintva tudjuk rendezni a rekordokat.
+A táblázat:
+    - előtt beillesztünk egy szerkesztőt, amivel új adatokat tudunk bevinni a táblázatba.
+    - sorait külön tudjuk törölni az utolsó oszlopban lévő "X"-szel --> "X" beillesztése
+    - fejlécére kattintva tudjuk rendezni a rekordokat.
 
 ## Adatszerkezetek
 termekekLISTA = [{}, {}] - itt vannak a megjelenített termékeink
@@ -19,7 +20,7 @@ kosarLISTA = [] - ide kerülnek a kosárba tett termékek
 ## Metódusok
 1. **htmlOszeallit(lista) -> txt** | összeállítja a táblázat html szerkezetét egy szöveges változóba
 2. **megjelenit(txt)** - megjeleníti egy adott html elemben a paraméterében kapott szöveget. 
-3. **rendez(lista, irany) -> rendezettLista** | a paraméterében kapott listát név szerint megrendezi; a függvény akkor fut le, ha valamit valahol kiválasztottunk.
+3. **rendez(lista, irany) -> rendezettLista** | a paraméterében kapott listát név szerint megrendezi.
 4. **adatHozzaadas(lista) -> kibovitettLista** | összegyűjti az űrlapról az adatokat és összeállít belőlük egy objektumot, majd azt beleteszi a listába; a függvény akkor fut le, ha rákattintunk a "Hozzáad" gombra. 
 5. **torol(lista, id ) -> tLista** | kitörli a listából az adott id-jű elemet.
 Akkor fog lefutni, ha sor melletti "Töröl" gombra kattintunk. 
