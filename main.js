@@ -1,47 +1,56 @@
 import { termekekLISTA } from "./adat.js";
 import { termekekOsszeallit, megjelenit } from "./listaMegjelenit.js";
+import { rendezArSzerint, rendezNevSzerint } from "./adatkezelo.js";
+const termekElem = $("#termekek");
+termekElem.html(termekOsszeallit(TASKALISTA));
 
-termekekOsszeallit(termekekLISTA);
-
-//const tablazatELEM = $(".adatok")
-//tablazatELEM.html(termekekOsszeallit(lista));
-
-/* kosár megjelenítése: */
 const KOSAR = []
-//const kosarbaGOMB = ();
+const kosarba = $("#gomb")
+
+const divELEM = $("#termekek")
+divELEM.html(megjelenit(termekekLISTA))
+
+let irany = 1;
+init(termekekLISTA);
 
 function init(lista) {
     megjelenit(htmlOsszeallit(lista));
     rendezEsemeny();
     torolEsemeny();
+    kosarEsemeny();
+
 }
 
-function rendezEsemeny() {
-    /* a függvény akkor fut le, ha a táblázat név fejlécére kattintunk. */
-    const termekELEM = $(".adatok table th").eq(0);
-    termekELEM.on("click", function () {
-      const rLISTA = rendez(termekekLISTA, irany);
-      console.log(rLISTA);
-      init(rLISTA);
+function rendezEsemeny(lista) {
+  const nevElem = $("#rendezes_nev");
+  const arElem = $("#rendezes_ar");
+
+  nevElem.on("click", function () {
+      const rLista = nevRendez(lista.slice(), irany);
+      termekElem.html(termekekOsszeallit(rLista));
       irany *= -1;
-    });
+  });
+
+  arElem.on("click", function () {
+      const rLista = rendezArSzerint(lista.slice(), irany);
+      termekElem.html(termekekOsszeallit(rLista));
+      irany *= -1;
+  });
 }
 
-function szuresEsemeny() {
-    /* akkor kell lefutnia, ha megváltozik a keresőmező tartalma */
-    const keresoELEM = $("#szuro");
-    keresoELEM.on("keyup", function () {
-      let keresoSzoveg = keresoELEM.val();
-      const szLISTA = szures(termekekLISTA, keresoSzoveg);
-      init(szLISTA);
-    });
+function kosarEsemeny() {
+  const gombElem = $(".gomb")
+  gombElem.on("click", function (event) {
+  const id = event.target.id 
+  KOSAR.push(termekekLISTA[id])
+  kosarba.html(termekekOsszeallit(KOSAR))
+  torolEsemeny();
+  });
 }
 
 function torolEsemeny() {
-    /* Akkor fog lefutni, ha sor melletti torol gombra kattintunk. */
     const torolGOMB = $(".torol");
     torolGOMB.on("click", function (event) {
-      /* event.target az az elem, amelyik kiváltotta az eseményt */
       let id = event.target.id;
       console.log(id);
       const LISTA = torol(termekekLISTA, id);

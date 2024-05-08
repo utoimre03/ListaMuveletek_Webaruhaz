@@ -6,7 +6,7 @@ export function termekekOsszeallit(lista) {
     txt += `<div class="card col-md-4">`;
     txt += `<div class="card-header">${lista[index].nev}</div>`;
     txt += `<div id="termekek" class="text-center">`;
-    txt += `<img src="${lista[index].kep}" alt="${lista[index].nev}">`;
+    txt += `<img src="${lista[index].kep}" alt="${lista[index].kep}">`;
     txt += `<p>${lista[index].ar}</p>`;
     txt += `<div><button class="gomb" id="${index}">Kosárba</button></div>`;
     txt += `</div>`;
@@ -35,6 +35,6 @@ export function kosarOsszeallit(lista) {
 }
 
 export function megjelenit(txt) {
-  const divELEM = $(".adatok");
+  const divELEM = $("#termekek");
   divELEM.html(txt);
 }

@@ -26,6 +26,6 @@ export function tablaOsszeallit(lista) {
 }
 
 export function megjelenit(txt) {
-    const divELEM = $(".termekek")
+    const divELEM = $("#termekek")
     divELEM.html(txt)  
 }
